@@ -9,7 +9,7 @@ This is the repository for our paper ModPrompt: Visual (Mod)ality (Prompt) for A
 ## News
 
  - Paper is under review, code will be released soon.
- - Arxiv: ***
+ - Arxiv: https://arxiv.org/pdf/2412.00622
  - If you find any problem or have any questions, please feel free to contact us!
 
 
