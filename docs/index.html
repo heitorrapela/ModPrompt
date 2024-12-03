@@ -1,0 +1,518 @@
+<script src="http://www.google.com/jsapi" type="text/javascript"></script>
+<script type="text/javascript">google.load("jquery", "1.3.2");</script>
+
+<style type="text/css">
+	body {
+		font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+		font-weight: 300;
+		font-size: 18px;
+		margin-left: auto;
+		margin-right: auto;
+		width: 1100px;
+	}
+
+	h1 {
+		font-weight: 300;
+	}
+
+	.disclaimerbox {
+		background-color: #eee;
+		border: 1px solid #eeeeee;
+		border-radius: 10px;
+		-moz-border-radius: 10px;
+		-webkit-border-radius: 10px;
+		padding: 20px;
+	}
+
+	video.header-vid {
+		height: 140px;
+		border: 1px solid black;
+		border-radius: 10px;
+		-moz-border-radius: 10px;
+		-webkit-border-radius: 10px;
+	}
+
+	img.header-img {
+		height: 140px;
+		border: 1px solid black;
+		border-radius: 10px;
+		-moz-border-radius: 10px;
+		-webkit-border-radius: 10px;
+	}
+
+	img.rounded {
+		border: 1px solid #eeeeee;
+		border-radius: 10px;
+		-moz-border-radius: 10px;
+		-webkit-border-radius: 10px;
+	}
+
+	a:link,
+	a:visited {
+		color: #1367a7;
+		text-decoration: none;
+	}
+
+	a:hover {
+		color: #208799;
+	}
+
+	td.dl-link {
+		height: 160px;
+		text-align: center;
+		font-size: 22px;
+	}
+
+	.layered-paper-big {
+		/* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+		box-shadow:
+			0px 0px 1px 1px rgba(0, 0, 0, 0.35),
+			/* The top layer shadow */
+			5px 5px 0 0px #fff,
+			/* The second layer */
+			5px 5px 1px 1px rgba(0, 0, 0, 0.35),
+			/* The second layer shadow */
+			10px 10px 0 0px #fff,
+			/* The third layer */
+			10px 10px 1px 1px rgba(0, 0, 0, 0.35),
+			/* The third layer shadow */
+			15px 15px 0 0px #fff,
+			/* The fourth layer */
+			15px 15px 1px 1px rgba(0, 0, 0, 0.35),
+			/* The fourth layer shadow */
+			20px 20px 0 0px #fff,
+			/* The fifth layer */
+			20px 20px 1px 1px rgba(0, 0, 0, 0.35),
+			/* The fifth layer shadow */
+			25px 25px 0 0px #fff,
+			/* The fifth layer */
+			25px 25px 1px 1px rgba(0, 0, 0, 0.35);
+		/* The fifth layer shadow */
+		margin-left: 10px;
+		margin-right: 45px;
+	}
+
+	.paper-big {
+		/* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+		box-shadow:
+			0px 0px 1px 1px rgba(0, 0, 0, 0.35);
+		/* The top layer shadow */
+
+		margin-left: 10px;
+		margin-right: 45px;
+	}
+
+
+	.layered-paper {
+		/* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+		box-shadow:
+			0px 0px 1px 1px rgba(0, 0, 0, 0.35),
+			/* The top layer shadow */
+			5px 5px 0 0px #fff,
+			/* The second layer */
+			5px 5px 1px 1px rgba(0, 0, 0, 0.35),
+			/* The second layer shadow */
+			10px 10px 0 0px #fff,
+			/* The third layer */
+			10px 10px 1px 1px rgba(0, 0, 0, 0.35);
+		/* The third layer shadow */
+		margin-top: 5px;
+		margin-left: 10px;
+		margin-right: 30px;
+		margin-bottom: 5px;
+	}
+
+	.vert-cent {
+		position: relative;
+		top: 50%;
+		transform: translateY(-50%);
+	}
+
+	hr {
+		border: 0;
+		height: 1px;
+		background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+	}
+</style>
+
+<html>
+
+<head>
+	<title>ModPrompt: Visual Modality Prompt for Adapting Vision-Language Object Detectors</title>
+	<meta property="og:image" content="" />
+	<meta property="og:title" content="ModPrompt: Visual Modality Prompt for Adapting Vision-Language Object Detectors" />
+</head>
+
+<body>
+	<br>
+	<center>
+		<span style="font-size:42px">Visual <a style=color:red>Mod</a>ality <a style=color:red>Prompt</a> for Adapting Vision-Language Object Detectors</span>
+		<table align=center width=600px>
+			<tr>
+
+				<td align=center width=150px>
+					<center>
+						<span style="font-size:21px"><a href="https://heitorrapela.github.io/"  target="_blank">Heitor R. Medeiros</a></span>
+					</center>
+				</td>
+
+				<td align=center width=150px>
+					<center>
+						<span style="font-size:21px"><a href="https://www.linkedin.com/in/atif-belal-15779821a/"  target="_blank">Atif Belal</a></span>
+					</center>
+				</td>
+
+				<td align=center width=170px>
+					<center>
+						<span style="font-size:21px"><a href="https://www.linkedin.com/in/srikanth-muralidharan-39641854/"  target="_blank">Srikanth Muralidharan</a></span>
+					</center>
+				</td>
+
+		</table>
+
+		<table align=center width=600px>
+			<tr>
+
+				<td align=center width=150px>
+					<center>
+						<span style="font-size:21px"><a
+								href="https://scholar.google.com/citations?hl=en&user=TmfbdagAAAAJ&view_op=list_works&sortby=pubdate"  target="_blank">Eric Granger</a></span>
+					</center>
+				</td>
+
+				<td align=center width=150px>
+					<center>
+						<span style="font-size:21px"><a
+								href="https://scholar.google.com/citations?hl=en&user=aVfyPAoAAAAJ&view_op=list_works&sortby=pubdate"  target="_blank">Marco
+								Pedersoli</a></span>
+					</center>
+				</td>
+		</table>
+		<span style="font-size:30px">Under Review</span>
+
+		<table align=center width=650px>
+			<tr>
+				<td align=center width=150px>
+					<center>
+						<span style="font-size:24px"><a href='https://github.com/heitorrapela/ModPrompt' target="_blank">
+								[GitHub]</a></span>
+					</center>
+				</td>
+				<td align=center width=150px>
+					<center>
+						<span style="font-size:24px"><a
+								href=''  target="_blank">
+								[Paper]</a></span>
+					</center>
+				</td>
+
+			</tr>
+			<tr>
+		</table>
+	</center>
+
+	<!--   		  <br><br>
+		  <hr> -->
+
+	<br>
+	
+	<table align=center width=850px>
+		<tr>
+			<td width=400px>
+				<center>
+					<a href="https://github.com/heitorrapela/ModPrompt" target="_blank"><img class="rounded" src="./images/modprompt_general.png" height="400px"></img>
+						</href></a><br>
+				</center>
+			</td>
+		</tr>
+		<td width=400px>
+			<br>
+			<center>
+				<span style="font-size:14px"><i> Strategies to adapt object detectors to new modalities: (a) Full Fine-tuning: Both the backbone (the part of the model responsible
+					for feature extraction) and the head (responsible for the final output, like object detection) are updated with new training data. (b) Head
+					Fine-tuning: Only the head is fine-tuned while the backbone remains frozen. (c) Visual Prompt: Uses a visual prompt added to the input.
+					The backbone and head remain unchanged, but the visual prompt guides the model to better interpret the new modality. (d) Our Modality
+					Prompt. Similarly to a visual prompt, the input image is added to a visual prompt. The main difference is that here the prompt is not static,
+					it is a transformation of the input image.
+				
+				</i>
+			</center>
+		</td>
+	</table>
+
+
+
+	</div>
+	<br><br>
+	<hr>
+
+
+	<table align=center width=850px>
+		<center>
+			<h1>Abstract</h1>
+		</center>
+	</table>
+	
+	The zero-shot (ZS) performance of object detectors (OD) degrades when tested on different modalities, such as IR and depth. While recent work has explored image translation techniques to adapt detectors to new modalities, these methods are limited to a single modality and apply only to traditional detectors. Recently, vision-language (VL) detectors, such as YOLO-World and Grounding DINO, have shown promising ZS capabilities, however, they have not yet been adapted for other visual modalities. Traditional fine-tuning (FT) approaches tend to compromise the ZS capabilities of ODs. The visual prompt strategies commonly used for classification with vision-language models apply the same linear prompt translation to each image making them less effective. To address these limitations, we propose ModPrompt, a visual prompt strategy to adapt VL  detectors to new modalities without degrading ZS performance. In particular, an encoder-decoder visual prompt strategy is proposed, further enhanced by the integration of inference-friendly task residuals, facilitating more robust adaptation. Empirically, we benchmark our method for modality adaptation on two VL detectors, YOLO-World and Grounding DINO, and on challenging IR (LLVIP, FLIR) and depth (NYUv2), achieving performance comparable to FT while preserving the model's ZS capability. Our code is available at: <a href="https://github.com/heitorrapela/ModPrompt" target="_blank">https://github.com/heitorrapela/ModPrompt</a> <br><br>
+	
+	<hr>
+
+
+	<center>
+		<h1>Try our code</h1>
+	</center>
+
+	<table align=center width=850px>
+		<tr>
+			<td width=400px>
+				<center>
+					<a href="https://github.com/heitorrapela/ModPrompt" target="_blank"><img class="rounded" src="./images/modprompt_taskresidual.png" height="400px"></img>
+						</href></a><br>
+				</center>
+			</td>
+		</tr>
+		<td width=400px>
+			<br>
+			<center>
+				<span style="font-size:14px"><i> Our proposed strategy for text-prompt tuning: an 
+					inference-friendly and knowledge-preserving text-prompt tuning method. An offline embedding is generated for each object
+					category, then residual trainable parameters and the ModPrompt
+					are integrated into the detector for adapting it to new modalities.</i>
+			</center>
+		</td>
+	</table>
+
+
+
+
+	<br>
+	<hr>
+
+
+	<table align=center width=425px>
+		<center>
+			<h1>Paper and Supplementary Material</h1>
+		</center>
+		<tr>
+
+			<td><a
+					href="" target="_blank"><img
+						class="layered-paper-big" style="height:175px" src="./images/paper_pdf_thumb.png" /></a></td>
+			<td><span style="font-size:14pt">
+					Heitor R. Medeiros, Atif Belal, Srikanth Muralidharan, Eric Granger, Marco Pedersoli.
+
+					<br><br>
+					ModPrompt: Visual Modality Prompt for Adapting Vision-Language Object Detectors.<br>
+					In ArXiv, 2024.<br><br>
+					(hosted on <a href=""  target="_blank">ArXiv2024</a>)</a>
+			</td>
+			</td>
+		</tr>
+	</table>
+	<br>
+
+
+	<table align=center width=600px>
+		<tr>
+			<td><span style="font-size:14pt">
+					<center>
+						<a href="./bibtex.txt"  target="_blank">[Bibtex]</a>
+					</center>
+			</td>
+		</tr>
+	</table>
+
+	<hr>
+
+	<a name="bw_legacy"></a>
+	<center>
+		<h1>Experiments and Results</h1>
+	</center>
+
+
+
+
+
+	<left>
+		<h3>- Visual Modality Adaptation.</h3>
+	</left>
+	<table align=center width=850px>
+		<tr>
+			<td width=700px>
+				<center>
+					<a href="./images/exp1.png" target="_blank"><img class="rounded" src="./images/exp1.png" height="700px"></img></href>
+						</a><br>
+				</center>
+			</td>
+		</tr>
+	</table>
+
+	<br>
+
+	<span style="font-size:14pt"> <b> Table 1</b></span>. Detection performance (APs) for YOLO-World and Grounding DINO for the three main datasets evaluated: LLVIP-IR, FLIR-IR,
+	and NYUv2-Depth. The different visual prompt adaptation techniques are compared with our ModPrompt, and the zero-shot (ZS), head
+	finetuning (HFT), and full finetuning (FT) are also reported, where the full finetuning is the upper bound.
+
+
+
+	<left>
+		<h3>- Ablation of Visual Prompts.</h3>
+	</left>
+	<table align=center width=850px>
+		<tr>
+			<td width=700px>
+				<center>
+					<a href="./images/exp2.png" target="_blank"><img class="rounded" src="./images/exp2.png" height="700px"></img></href>
+						</a><br>
+				</center>
+			</td>
+		</tr>
+	</table>
+
+	<br>
+
+	<span style="font-size:14pt"> <b> Table 2</b></span>. Table 2. Detection performance (APs) for YOLO-World under the
+	three main datasets evaluated: LLVIP-IR, FLIR-IR, and NYUv2-Depth. We compared the main visual prompt strategies fixed, random, padding, and ModPrompt. The variations consist of the number of prompt pixels (ps = 30, 200 or 300) and for ModPrompt,
+	the MobileNet (MB) or ResNet (RES).
+
+
+
+	<left>
+		<h3>- Comparison with Modality Translators for OD.</h3>
+	</left>
+	<table align=center width=400px>
+		<tr>
+			<td width=700px>
+				<center>
+					<a href="./images/exp3.png" target="_blank"><img class="rounded" src="./images/exp3.png" height="250px"></img></href>
+						</a><br>
+				</center>
+			</td>
+		</tr>
+	</table>
+
+	<br>
+
+	<span style="font-size:14pt"> <b> Table 3</b></span>. Detection performance of different modality translators
+	for OD in terms of APs.
+
+
+	<left>
+		<h3>- Inference-friendly Text-embedding Adaptation with
+			Knowledge Preservation.</h3>
+	</left>
+	<table align=center width=850px>
+		<tr>
+			<td width=700px>
+				<center>
+					<a href="./images/exp4.png" target="_blank"><img class="rounded" src="./images/exp4.png" height="350px"></img></href>
+						</a><br>
+				</center>
+			</td>
+		</tr>
+	</table>
+
+	<br>
+
+	<span style="font-size:14pt"> <b> Table 4</b></span>. Detection performance (APs) for YOLO-World and Grounding DINO on FLIR-IR and NYUv2-Depth datasets. Each visual prompt
+	adaptation strategy is compared with the learnable task residuals (results in parenthesis are the difference without the task residuals), which
+	are responsible for updating the new task embeddings and not changing the text encoder knowledge.
+
+
+
+
+	<left>
+		<h3>- Qualitative Results. </h3>
+	</left>
+	<table align=center width=850px>
+		<tr>
+			<td width=700px>
+				<center>
+					<a href="./images/qualitative.png" target="_blank"><img class="rounded" src="./images/qualitative.png" height="700px"></img></href>
+						</a><br>
+				</center>
+			</td>
+		</tr>
+	</table>
+
+	<br>
+
+	<span style="font-size:14pt"> <b> Figure 4</b></span>. Detections for YOLO-World for the different approaches: First two rows for LLVIP (infrared), and last two rows for NYUv2
+	(depth). Each column corresponds to a different approach: (a) GT (Ground Truth): Shows in yellow the ground-truth bounding boxes
+	for objects. (b) Zero-Shot: Displays detections (in red) from a zero-shot model. (c) Visual Prompt: Illustrates detections with a visual
+	prompt added to the image. (d) ModPrompt (Ours): Detections from our proposed model.
+
+
+
+	<br><br><br><br>
+
+	<br>
+	<hr>
+	<br>
+
+	<table align=center width=1100px>
+		<tr>
+			<td width=400px>
+				<left>
+					<center>
+						<h1>Acknowledgements</h1>
+					</center>
+
+					This work was supported in part by Distech Controls Inc., the Natural Sciences and
+					Engineering Research Council of Canada, the Digital Research Alliance of Canada,
+					and MITACS.
+				</left>
+			</td>
+		</tr>
+	</table>
+
+	<br>
+	<hr>
+	<br>
+
+	<table align=center width=850px>
+		<br>
+		<tr>
+			<td width=400px>
+				<center>
+					<a href="https://www.etsmtl.ca/" target="_blank"><img class="rounded" src="./images/ets.png" height="100px"></img>
+						</href></a><br>
+				</center>
+			</td>
+			<td width=400px>
+				<center>
+					<a href="https://etsmtl.ca/" target="_blank"><img class="rounded" src="./images/ills.png" height="100px"></img>
+						</href></a><br>
+				</center>
+			</td>
+
+			<td width=400px>
+				<center>
+					<a href="https://etsmtl.ca/" target="_blank"><img class="rounded" src="./images/livia.png" height="100px"></img>
+						</href></a><br>
+				</center>
+			</td>
+		</tr>
+
+
+
+	</table>
+
+	<br><br>
+
+	<script>
+		(function (i, s, o, g, r, a, m) {
+			i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+				(i[r].q = i[r].q || []).push(arguments)
+			}, i[r].l = 1 * new Date(); a = s.createElement(o),
+				m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+		})(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+		ga('create', 'UA-75863369-1', 'auto');
+		ga('send', 'pageview');
+
+	</script>
+
+</body>
+
+</html>
