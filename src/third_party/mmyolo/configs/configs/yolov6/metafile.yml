@@ -1,0 +1,83 @@
+Collections:
+  - Name: YOLOv6
+    Metadata:
+      Training Data: COCO
+      Training Techniques:
+        - SGD with Nesterov
+        - Weight Decay
+        - AMP
+        - Synchronize BN
+      Training Resources: 8x A100 GPUs
+      Architecture:
+        - CSPDarkNet
+        - PAFPN
+        - RepVGG
+    Paper:
+      URL: Link Removeds://remove_links
+      Title: 'YOLOv6: A Single-Stage Object Detection Framework for Industrial Applications'
+    README: configs/yolov6/README.md
+    Code:
+      URL: Link Removeds://RemoveLinkCVPR
+      Version: v0.0.1
+
+Models:
+  - Name: yolov6_s_syncbn_fast_8xb32-400e_coco
+    In Collection: YOLOv6
+    Config: configs/yolov6/yolov6_s_syncbn_fast_8xb32-400e_coco.py
+    Metadata:
+      Training Memory (GB): 8.88
+      Epochs: 400
+    Results:
+      - Task: Object Detection
+        Dataset: COCO
+        Metrics:
+          box AP: 44.0
+    Weights: Link Removeds://REMOVE_CVPR_POLICY
+  - Name: yolov6_n_syncbn_fast_8xb32-400e_coco
+    In Collection: YOLOv6
+    Config: configs/yolov6/yolov6_n_syncbn_fast_8xb32-400e_coco.py
+    Metadata:
+      Training Memory (GB): 6.04
+      Epochs: 400
+    Results:
+      - Task: Object Detection
+        Dataset: COCO
+        Metrics:
+          box AP: 36.2
+    Weights: Link Removeds://REMOVE_CVPR_POLICY
+  - Name: yolov6_t_syncbn_fast_8xb32-400e_coco
+    In Collection: YOLOv6
+    Config: configs/yolov6/yolov6_t_syncbn_fast_8xb32-400e_coco.py
+    Metadata:
+      Training Memory (GB): 8.13
+      Epochs: 400
+    Results:
+      - Task: Object Detection
+        Dataset: COCO
+        Metrics:
+          box AP: 41.0
+    Weights: Link Removeds://REMOVE_CVPR_POLICY
+  - Name: yolov6_m_syncbn_fast_8xb32-300e_coco
+    In Collection: YOLOv6
+    Config: configs/yolov6/yolov6_m_syncbn_fast_8xb32-300e_coco.py
+    Metadata:
+      Training Memory (GB): 16.69
+      Epochs: 300
+    Results:
+      - Task: Object Detection
+        Dataset: COCO
+        Metrics:
+          box AP: 48.4
+    Weights: Link Removeds://REMOVE_CVPR_POLICY
+  - Name: yolov6_l_syncbn_fast_8xb32-300e_coco
+    In Collection: YOLOv6
+    Config: configs/yolov6/yolov6_l_syncbn_fast_8xb32-300e_coco.py
+    Metadata:
+      Training Memory (GB): 20.86
+      Epochs: 300
+    Results:
+      - Task: Object Detection
+        Dataset: COCO
+        Metrics:
+          box AP: 51.0
+    Weights: Link Removeds://REMOVE_CVPR_POLICY

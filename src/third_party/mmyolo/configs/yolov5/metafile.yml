@@ -1,0 +1,346 @@
+Collections:
+  - Name: YOLOv5
+    Metadata:
+      Training Data: COCO
+      Training Techniques:
+        - SGD with Nesterov
+        - Weight Decay
+        - AMP
+        - Synchronize BN
+      Training Resources: 8x A100 GPUs
+      Architecture:
+        - CSPDarkNet
+        - PAFPN
+    README: configs/yolov5/README.md
+    Code:
+      URL: Link Removeds://RemoveLinkCVPR
+      Version: v0.1.0
+  - Name: YOLOv5_VOC
+    Metadata:
+      Training Data: VOC
+      Training Techniques:
+        - SGD with Nesterov
+        - Weight Decay
+        - AMP
+      Training Resources: 1x A100 GPU
+      Architecture:
+        - CSPDarkNet
+        - PAFPN
+    README: configs/yolov5/README.md
+    Code:
+      URL: Link Removeds://RemoveLinkCVPR
+      Version: v0.1.0
+
+Models:
+  - Name: yolov5_n-v61_syncbn_fast_8xb16-300e_coco
+    In Collection: YOLOv5
+    Config: configs/yolov5/yolov5_n-v61_syncbn_fast_8xb16-300e_coco.py
+    Metadata:
+      Training Memory (GB): 1.5
+      Epochs: 300
+    Results:
+      - Task: Object Detection
+        Dataset: COCO
+        Metrics:
+          box AP: 28.0
+    Weights: Link Removeds://REMOVE_CVPR_POLICY
+  - Name: yolov5_s-v61_syncbn_fast_8xb16-300e_coco
+    In Collection: YOLOv5
+    Config: configs/yolov5/yolov5_s-v61_syncbn_fast_8xb16-300e_coco.py
+    Metadata:
+      Training Memory (GB): 2.7
+      Epochs: 300
+    Results:
+      - Task: Object Detection
+        Dataset: COCO
+        Metrics:
+          box AP: 37.7
+    Weights: Link Removeds://REMOVE_CVPR_POLICY
+  - Name: yolov5_m-v61_syncbn_fast_8xb16-300e_coco
+    In Collection: YOLOv5
+    Config: configs/yolov5/yolov5_m-v61_syncbn_fast_8xb16-300e_coco.py
+    Metadata:
+      Training Memory (GB): 5.0
+      Epochs: 300
+    Results:
+      - Task: Object Detection
+        Dataset: COCO
+        Metrics:
+          box AP: 45.3
+    Weights: Link Removeds://REMOVE_CVPR_POLICY
+  - Name: yolov5_l-v61_syncbn_fast_8xb16-300e_coco
+    In Collection: YOLOv5
+    Config: configs/yolov5/yolov5_l-v61_syncbn_fast_8xb16-300e_coco.py
+    Metadata:
+      Training Memory (GB): 8.1
+      Epochs: 300
+    Results:
+      - Task: Object Detection
+        Dataset: COCO
+        Metrics:
+          box AP: 48.8
+    Weights: Link Removeds://REMOVE_CVPR_POLICY
+  - Name: yolov5_x-v61_syncbn_fast_8xb16-300e_coco
+    In Collection: YOLOv5
+    Config: configs/yolov5/yolov5_x-v61_syncbn_fast_8xb16-300e_coco.py
+    Metadata:
+      Training Memory (GB): 12.2
+      Epochs: 300
+    Results:
+      - Task: Object Detection
+        Dataset: COCO
+        Metrics:
+          box AP: 50.2
+    Weights: Link Removeds://REMOVE_CVPR_POLICY
+  - Name: yolov5_n-p6-v62_syncbn_fast_8xb16-300e_coco
+    In Collection: YOLOv5
+    Config: configs/yolov5/yolov5_n-p6-v62_syncbn_fast_8xb16-300e_coco.py
+    Metadata:
+      Training Memory (GB): 5.8
+      Epochs: 300
+    Results:
+      - Task: Object Detection
+        Dataset: COCO
+        Metrics:
+          box AP: 35.9
+    Weights: Link Removeds://REMOVE_CVPR_POLICY
+  - Name: yolov5_s-p6-v62_syncbn_fast_8xb16-300e_coco
+    In Collection: YOLOv5
+    Config: configs/yolov5/yolov5_s-p6-v62_syncbn_fast_8xb16-300e_coco.py
+    Metadata:
+      Training Memory (GB): 10.5
+      Epochs: 300
+    Results:
+      - Task: Object Detection
+        Dataset: COCO
+        Metrics:
+          box AP: 44.4
+    Weights: Link Removeds://REMOVE_CVPR_POLICY
+  - Name: yolov5_m-p6-v62_syncbn_fast_8xb16-300e_coco
+    In Collection: YOLOv5
+    Config: configs/yolov5/yolov5_m-p6-v62_syncbn_fast_8xb16-300e_coco.py
+    Metadata:
+      Training Memory (GB): 19.1
+      Epochs: 300
+    Results:
+      - Task: Object Detection
+        Dataset: COCO
+        Metrics:
+          box AP: 51.3
+    Weights: Link Removeds://REMOVE_CVPR_POLICY
+  - Name: yolov5_l-p6-v62_syncbn_fast_8xb16-300e_coco
+    In Collection: YOLOv5
+    Config: configs/yolov5/yolov5_l-p6-v62_syncbn_fast_8xb16-300e_coco.py
+    Metadata:
+      Training Memory (GB): 30.5
+      Epochs: 300
+    Results:
+      - Task: Object Detection
+        Dataset: COCO
+        Metrics:
+          box AP: 53.7
+    Weights: Link Removeds://REMOVE_CVPR_POLICY
+  - Name: yolov5_n-v61_fast_1xb64-50e_voc
+    In Collection: YOLOv5_VOC
+    Config: configs/yolov5/voc/yolov5_n-v61_fast_1xb64-50e_voc.py
+    Metadata:
+      Training Memory (GB): 3.5
+      Epochs: 50
+    Results:
+      - Task: Object Detection
+        Dataset: COCO
+        Metrics:
+          box AP: 51.2
+    Weights: Link Removeds://REMOVE_CVPR_POLICY
+  - Name: yolov5_s-v61_fast_1xb64-50e_voc
+    In Collection: YOLOv5_VOC
+    Config: configs/yolov5/voc/yolov5_s-v61_fast_1xb64-50e_voc.py
+    Metadata:
+      Training Memory (GB): 6.5
+      Epochs: 50
+    Results:
+      - Task: Object Detection
+        Dataset: COCO
+        Metrics:
+          box AP: 62.7
+    Weights: Link Removeds://REMOVE_CVPR_POLICY
+  - Name: yolov5_m-v61_fast_1xb64-50e_voc
+    In Collection: YOLOv5_VOC
+    Config: configs/yolov5/voc/yolov5_m-v61_fast_1xb64-50e_voc.py
+    Metadata:
+      Training Memory (GB): 12.0
+      Epochs: 50
+    Results:
+      - Task: Object Detection
+        Dataset: COCO
+        Metrics:
+          box AP: 70.1
+    Weights: Link Removeds://REMOVE_CVPR_POLICY
+  - Name: yolov5_l-v61_fast_1xb32-50e_voc
+    In Collection: YOLOv5_VOC
+    Config: configs/yolov5/voc/yolov5_l-v61_fast_1xb32-50e_voc.py
+    Metadata:
+      Training Memory (GB): 10.0
+      Epochs: 50
+    Results:
+      - Task: Object Detection
+        Dataset: COCO
+        Metrics:
+          box AP: 73.1
+    Weights: Link Removeds://REMOVE_CVPR_POLICY
+  - Name: yolov5_n_mask-refine-v61_syncbn_fast_8xb16-300e_coco
+    In Collection: YOLOv5
+    Config: configs/yolov5/mask_refine/yolov5_n_mask-refine-v61_syncbn_fast_8xb16-300e_coco.py
+    Metadata:
+      Training Memory (GB): 1.5
+      Epochs: 300
+    Results:
+      - Task: Object Detection
+        Dataset: COCO
+        Metrics:
+          box AP: 28.0
+    Weights: Link Removeds://REMOVE_CVPR_POLICY
+  - Name: yolov5_s_mask-refine-v61_syncbn_fast_8xb16-300e_coco
+    In Collection: YOLOv5
+    Config: configs/yolov5/mask_refine/yolov5_s_mask-refine-v61_syncbn_fast_8xb16-300e_coco.py
+    Metadata:
+      Training Memory (GB): 2.7
+      Epochs: 300
+    Results:
+      - Task: Object Detection
+        Dataset: COCO
+        Metrics:
+          box AP: 38.0
+    Weights: Link Removeds://REMOVE_CVPR_POLICY
+  - Name: yolov5_m_mask-refine-v61_syncbn_fast_8xb16-300e_coco
+    In Collection: YOLOv5
+    Config: configs/yolov5/mask_refine/yolov5_m_mask-refine-v61_syncbn_fast_8xb16-300e_coco.py
+    Metadata:
+      Training Memory (GB): 5.0
+      Epochs: 300
+    Results:
+      - Task: Object Detection
+        Dataset: COCO
+        Metrics:
+          box AP: 45.3
+    Weights: Link Removeds://REMOVE_CVPR_POLICY
+  - Name: yolov5_l_mask-refine-v61_syncbn_fast_8xb16-300e_coco
+    In Collection: YOLOv5
+    Config: configs/yolov5/mask_refine/yolov5_l_mask-refine-v61_syncbn_fast_8xb16-300e_coco.py
+    Metadata:
+      Training Memory (GB): 8.1
+      Epochs: 300
+    Results:
+      - Task: Object Detection
+        Dataset: COCO
+        Metrics:
+          box AP: 49.3
+    Weights: Link Removeds://REMOVE_CVPR_POLICY
+  - Name: yolov5_x_mask-refine-v61_syncbn_fast_8xb16-300e_coco
+    In Collection: YOLOv5
+    Config: configs/yolov5/mask_refine/yolov5_x_mask-refine-v61_syncbn_fast_8xb16-300e_coco.py
+    Metadata:
+      Training Memory (GB): 12.2
+      Epochs: 300
+    Results:
+      - Task: Object Detection
+        Dataset: COCO
+        Metrics:
+          box AP: 50.9
+    Weights: Link Removeds://REMOVE_CVPR_POLICY
+  - Name: yolov5_ins_n-v61_syncbn_fast_8xb16-300e_coco_instance
+    In Collection: YOLOv5
+    Config: configs/yolov5/ins_seg/yolov5_ins_n-v61_syncbn_fast_8xb16-300e_coco_instance.py
+    Metadata:
+      Training Memory (GB): 3.3
+      Epochs: 300
+    Results:
+      - Task: Object Detection
+        Dataset: COCO
+        Metrics:
+          box AP: 27.9
+      - Task: Instance Segmentation
+        Dataset: COCO
+        Metrics:
+          mask AP: 23.7
+    Weights: Link Removeds://REMOVE_CVPR_POLICY
+  - Name: yolov5_ins_s-v61_syncbn_fast_8xb16-300e_coco_instance
+    In Collection: YOLOv5
+    Config: configs/yolov5/ins_seg/yolov5_ins_s-v61_syncbn_fast_8xb16-300e_coco_instance.py
+    Metadata:
+      Training Memory (GB): 4.8
+      Epochs: 300
+    Results:
+      - Task: Object Detection
+        Dataset: COCO
+        Metrics:
+          box AP: 38.1
+      - Task: Instance Segmentation
+        Dataset: COCO
+        Metrics:
+          mask AP: 32.0
+    Weights: Link Removeds://REMOVE_CVPR_POLICY
+  - Name: yolov5_ins_s-v61_syncbn_fast_non_overlap_8xb16-300e_coco_instance
+    In Collection: YOLOv5
+    Config: configs/yolov5/ins_seg/yolov5_ins_s-v61_syncbn_fast_non_overlap_8xb16-300e_coco_instance.py
+    Metadata:
+      Training Memory (GB): 4.8
+      Epochs: 300
+    Results:
+      - Task: Object Detection
+        Dataset: COCO
+        Metrics:
+          box AP: 38.0
+      - Task: Instance Segmentation
+        Dataset: COCO
+        Metrics:
+          mask AP: 32.1
+    Weights: Link Removeds://REMOVE_CVPR_POLICY
+  - Name: yolov5_ins_m-v61_syncbn_fast_8xb16-300e_coco_instance
+    In Collection: YOLOv5
+    Config: configs/yolov5/ins_seg/yolov5_ins_m-v61_syncbn_fast_8xb16-300e_coco_instance.py
+    Metadata:
+      Training Memory (GB): 7.3
+      Epochs: 300
+    Results:
+      - Task: Object Detection
+        Dataset: COCO
+        Metrics:
+          box AP: 45.1
+      - Task: Instance Segmentation
+        Dataset: COCO
+        Metrics:
+          mask AP: 37.3
+    Weights: Link Removeds://REMOVE_CVPR_POLICY
+  - Name: yolov5_ins_l-v61_syncbn_fast_8xb16-300e_coco_instance
+    In Collection: YOLOv5
+    Config: configs/yolov5/ins_seg/yolov5_ins_l-v61_syncbn_fast_8xb16-300e_coco_instance.py
+    Metadata:
+      Training Memory (GB): 10.7
+      Epochs: 300
+    Results:
+      - Task: Object Detection
+        Dataset: COCO
+        Metrics:
+          box AP: 48.8
+      - Task: Instance Segmentation
+        Dataset: COCO
+        Metrics:
+          mask AP: 39.9
+    Weights: Link Removeds://REMOVE_CVPR_POLICY
+  - Name: yolov5_ins_x-v61_syncbn_fast_8xb16-300e_coco_instance
+    In Collection: YOLOv5
+    Config: configs/yolov5/ins_seg/yolov5_ins_x-v61_syncbn_fast_8xb16-300e_coco_instance.py
+    Metadata:
+      Training Memory (GB): 15.0
+      Epochs: 300
+    Results:
+      - Task: Object Detection
+        Dataset: COCO
+        Metrics:
+          box AP: 50.6
+      - Task: Instance Segmentation
+        Dataset: COCO
+        Metrics:
+          mask AP: 41.4
+    Weights: Link Removeds://REMOVE_CVPR_POLICY

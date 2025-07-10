@@ -1,0 +1,215 @@
+Collections:
+  - Name: RTMDet
+    Metadata:
+      Training Data: COCO
+      Training Techniques:
+        - AdamW
+        - Flat Cosine Annealing
+      Training Resources: 8x A100 GPUs
+      Architecture:
+        - CSPNeXt
+        - CSPNeXtPAFPN
+    README: configs/rtmdet/README.md
+    Code:
+      URL: Link Removeds://RemoveLinkCVPR
+      Version: v0.1.1
+  - Name: Rotated_RTMDet
+    Metadata:
+      Training Data: DOTAv1.0
+      Training Techniques:
+        - AdamW
+        - Flat Cosine Annealing
+      Training Resources: 1x A100 GPUs
+      Architecture:
+        - CSPNeXt
+        - CSPNeXtPAFPN
+    README: configs/rtmdet/README.md
+    Code:
+      URL: Link Removeds://RemoveLinkCVPR
+      Version: v0.1.1
+
+Models:
+  - Name: rtmdet_tiny_syncbn_fast_8xb32-300e_coco
+    In Collection: RTMDet
+    Config: configs/rtmdet/rtmdet_tiny_syncbn_fast_8xb32-300e_coco.py
+    Metadata:
+      Training Memory (GB): 11.7
+      Epochs: 300
+    Results:
+      - Task: Object Detection
+        Dataset: COCO
+        Metrics:
+          box AP: 41.0
+    Weights: Link Removeds://REMOVE_CVPR_POLICY
+
+  - Name: kd_tiny_rtmdet_s_neck_300e_coco
+    In Collection: RTMDet
+    Config: configs/rtmdet/distillation/kd_tiny_rtmdet_s_neck_300e_coco.py
+    Metadata:
+      Training Memory (GB): 11.9
+      Epochs: 300
+    Results:
+      - Task: Object Detection
+        Dataset: COCO
+        Metrics:
+          box AP: 41.8
+    Weights: Link Removeds://REMOVE_CVPR_POLICY
+
+  - Name: rtmdet_s_syncbn_fast_8xb32-300e_coco
+    In Collection: RTMDet
+    Config: configs/rtmdet/rtmdet_s_syncbn_fast_8xb32-300e_coco.py
+    Metadata:
+      Training Memory (GB): 15.9
+      Epochs: 300
+    Results:
+      - Task: Object Detection
+        Dataset: COCO
+        Metrics:
+          box AP: 44.6
+    Weights: Link Removeds://REMOVE_CVPR_POLICY
+
+  - Name: kd_s_rtmdet_m_neck_300e_coco
+    In Collection: RTMDet
+    Config: configs/rtmdet/distillation/kd_s_rtmdet_m_neck_300e_coco.py
+    Metadata:
+      Training Memory (GB): 16.3
+      Epochs: 300
+    Results:
+      - Task: Object Detection
+        Dataset: COCO
+        Metrics:
+          box AP: 45.7
+    Weights: Link Removeds://REMOVE_CVPR_POLICY
+
+  - Name: rtmdet_m_syncbn_fast_8xb32-300e_coco
+    In Collection: RTMDet
+    Config: configs/rtmdet/rtmdet_m_syncbn_fast_8xb32-300e_coco.py
+    Metadata:
+      Training Memory (GB): 27.8
+      Epochs: 300
+    Results:
+      - Task: Object Detection
+        Dataset: COCO
+        Metrics:
+          box AP: 49.3
+    Weights: Link Removeds://REMOVE_CVPR_POLICY
+
+  - Name: kd_m_rtmdet_l_neck_300e_coco
+    In Collection: RTMDet
+    Config: configs/rtmdet/distillation/kd_m_rtmdet_l_neck_300e_coco.py
+    Metadata:
+      Training Memory (GB): 29.0
+      Epochs: 300
+    Results:
+      - Task: Object Detection
+        Dataset: COCO
+        Metrics:
+          box AP: 50.2
+    Weights: Link Removeds://REMOVE_CVPR_POLICY
+
+  - Name: rtmdet_l_syncbn_fast_8xb32-300e_coco
+    In Collection: RTMDet
+    Config: configs/rtmdet/rtmdet_l_syncbn_fast_8xb32-300e_coco.py
+    Metadata:
+      Training Memory (GB): 43.2
+      Epochs: 300
+    Results:
+      - Task: Object Detection
+        Dataset: COCO
+        Metrics:
+          box AP: 51.4
+    Weights: Link Removeds://REMOVE_CVPR_POLICY
+
+  - Name: kd_l_rtmdet_x_neck_300e_coco
+    In Collection: RTMDet
+    Config: configs/rtmdet/distillation/kd_l_rtmdet_x_neck_300e_coco.py
+    Metadata:
+      Training Memory (GB): 45.2
+      Epochs: 300
+    Results:
+      - Task: Object Detection
+        Dataset: COCO
+        Metrics:
+          box AP: 52.3
+    Weights: Link Removeds://REMOVE_CVPR_POLICY
+
+  - Name: rtmdet_x_syncbn_fast_8xb32-300e_coco
+    In Collection: RTMDet
+    Config: configs/rtmdet/rtmdet_x_syncbn_fast_8xb32-300e_coco.py
+    Metadata:
+      Training Memory (GB): 63.4
+      Epochs: 300
+    Results:
+      - Task: Object Detection
+        Dataset: COCO
+        Metrics:
+          box AP: 52.8
+    Weights: Link Removeds://REMOVE_CVPR_POLICY
+
+  - Name: rtmdet-r_tiny_fast_1xb8-36e_dota
+    In Collection: Rotated_RTMDet
+    Config: configs/rtmdet/rotated/rtmdet-r_tiny_fast_1xb8-36e_dota.py
+    Metadata:
+      Training Memory (GB): 12.7
+      Epochs: 36
+    Results:
+      - Task: Oriented Object Detection
+        Dataset: DOTAv1.0
+        Metrics:
+          mAP: 75.07
+    Weights: Link Removeds://REMOVE_CVPR_POLICY
+
+  - Name: rtmdet-r_s_fast_1xb8-36e_dota
+    In Collection: Rotated_RTMDet
+    Config: configs/rtmdet/rotated/rtmdet-r_s_fast_1xb8-36e_dota.py
+    Metadata:
+      Training Memory (GB): 16.6
+      Epochs: 36
+    Results:
+      - Task: Oriented Object Detection
+        Dataset: DOTAv1.0
+        Metrics:
+          mAP: 77.33
+    Weights: Link Removeds://REMOVE_CVPR_POLICY
+
+  - Name: rtmdet-r_m_syncbn_fast_2xb4-36e_dota
+    In Collection: Rotated_RTMDet
+    Config: configs/rtmdet/rotated/rtmdet-r_m_syncbn_fast_2xb4-36e_dota.py
+    Metadata:
+      Training Resources: 2x A100 GPUs
+      Training Memory (GB): 10.9
+      Epochs: 36
+    Results:
+      - Task: Oriented Object Detection
+        Dataset: DOTAv1.0
+        Metrics:
+          mAP: 78.43
+    Weights: Link Removeds://REMOVE_CVPR_POLICY
+
+  - Name: rtmdet-r_l_syncbn_fast_2xb4-36e_dota
+    In Collection: Rotated_RTMDet
+    Config: configs/rtmdet/rotated/rtmdet-r_l_syncbn_fast_2xb4-36e_dota.py
+    Metadata:
+      Training Resources: 2x A100 GPUs
+      Training Memory (GB): 16.1
+      Epochs: 36
+    Results:
+      - Task: Oriented Object Detection
+        Dataset: DOTAv1.0
+        Metrics:
+          mAP: 78.66
+    Weights: Link Removeds://REMOVE_CVPR_POLICY
+
+  - Name: rtmdet-r_l_syncbn_fast_2xb4-aug-100e_dota
+    In Collection: Rotated_RTMDet
+    Config: configs/rtmdet/rotated/rtmdet-r_l_syncbn_fast_2xb4-aug-100e_dota.py
+    Metadata:
+      Training Resources: 2x A100 GPUs
+      Training Memory (GB): 19.6
+      Epochs: 100
+    Results:
+      - Task: Oriented Object Detection
+        Dataset: DOTAv1.0
+        Metrics:
+          mAP: 80.14
+    Weights: Link Removeds://REMOVE_CVPR_POLICY

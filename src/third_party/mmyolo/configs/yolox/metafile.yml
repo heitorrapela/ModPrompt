@@ -1,0 +1,166 @@
+Collections:
+  - Name: YOLOX
+    Metadata:
+      Training Data: COCO
+      Training Techniques:
+        - SGD with Nesterov
+        - Weight Decay
+        - Cosine Annealing Lr Updater
+      Training Resources: 8x A100 GPUs
+      Architecture:
+        - CSPDarkNet
+        - PAFPN
+    Paper:
+      URL: Link Removeds://remove_links
+      Title: 'YOLOX: Exceeding YOLO Series in 2021'
+    README: configs/yolox/README.md
+    Code:
+      URL: Link Removeds://RemoveLinkCVPR
+      Version: v0.1.0
+
+
+Models:
+  - Name: yolox_tiny_fast_8xb8-300e_coco
+    In Collection: YOLOX
+    Config: configs/yolox/yolox_tiny_fast_8xb8-300e_coco.py
+    Metadata:
+      Training Memory (GB): 2.8
+      Epochs: 300
+    Results:
+      - Task: Object Detection
+        Dataset: COCO
+        Metrics:
+          box AP: 32.7
+    Weights: Link Removeds://REMOVE_CVPR_POLICY
+  - Name: yolox_s_fast_8xb8-300e_coco
+    In Collection: YOLOX
+    Config: configs/yolox/yolox_s_fast_8xb8-300e_coco.py
+    Metadata:
+      Training Memory (GB): 2.9
+      Epochs: 300
+    Results:
+      - Task: Object Detection
+        Dataset: COCO
+        Metrics:
+          box AP: 40.7
+    Weights: Link Removeds://REMOVE_CVPR_POLICY
+  - Name: yolox_m_fast_8xb8-300e_coco
+    In Collection: YOLOX
+    Config: configs/yolox/yolox_m_fast_8xb8-300e_coco.py
+    Metadata:
+      Training Memory (GB): 4.9
+      Epochs: 300
+    Results:
+      - Task: Object Detection
+        Dataset: COCO
+        Metrics:
+          box AP: 46.9
+    Weights: Link Removeds://REMOVE_CVPR_POLICY
+  - Name: yolox_l_fast_8xb8-300e_coco
+    In Collection: YOLOX
+    Config: configs/yolox/yolox_l_fast_8xb8-300e_coco.py
+    Metadata:
+      Training Memory (GB): 8.0
+      Epochs: 300
+    Results:
+      - Task: Object Detection
+        Dataset: COCO
+        Metrics:
+          box AP: 50.1
+    Weights: Link Removeds://REMOVE_CVPR_POLICY
+  - Name: yolox_x_fast_8xb8-300e_coco
+    In Collection: YOLOX
+    Config: configs/yolox/yolox_x_fast_8xb8-300e_coco.py
+    Metadata:
+      Training Memory (GB): 9.8
+      Epochs: 300
+    Results:
+      - Task: Object Detection
+        Dataset: COCO
+        Metrics:
+          box AP: 51.4
+    Weights: Link Removeds://REMOVE_CVPR_POLICY
+  - Name: yolox_tiny_fast_8xb32-300e-rtmdet-hyp_coco
+    In Collection: YOLOX
+    Config: configs/yolox/yolox_tiny_fast_8xb32-300e-rtmdet-hyp_coco.py
+    Metadata:
+      Training Memory (GB): 4.9
+      Epochs: 300
+    Results:
+      - Task: Object Detection
+        Dataset: COCO
+        Metrics:
+          box AP: 34.3
+    Weights: Link Removeds://REMOVE_CVPR_POLICY
+  - Name: yolox_s_fast_8xb32-300e-rtmdet-hyp_coco
+    In Collection: YOLOX
+    Config: configs/yolox/yolox_s_fast_8xb32-300e-rtmdet-hyp_coco.py
+    Metadata:
+      Training Memory (GB): 9.8
+      Epochs: 300
+    Results:
+      - Task: Object Detection
+        Dataset: COCO
+        Metrics:
+          box AP: 41.9
+    Weights: Link Removeds://REMOVE_CVPR_POLICY
+  - Name: yolox_m_fast_8xb32-300e-rtmdet-hyp_coco
+    In Collection: YOLOX
+    Config: configs/yolox/yolox_m_fast_8xb32-300e-rtmdet-hyp_coco.py
+    Metadata:
+      Training Memory (GB): 17.6
+      Epochs: 300
+    Results:
+      - Task: Object Detection
+        Dataset: COCO
+        Metrics:
+          box AP: 47.5
+    Weights: Link Removeds://REMOVE_CVPR_POLICY
+  - Name: yolox-pose_tiny_8xb32-300e-rtmdet-hyp_coco
+    In Collection: YOLOX
+    Config: yolox-pose_tiny_8xb32-300e-rtmdet-hyp_coco.py
+    Metadata:
+      Training Memory (GB): 5.3
+      Epochs: 300
+    Results:
+      - Task: Human Pose Estimation
+        Dataset: COCO
+        Metrics:
+          AP: 52.8
+    Weights: Link Removeds://REMOVE_CVPR_POLICY
+  - Name: yolox-pose_s_8xb32-300e-rtmdet-hyp_coco
+    In Collection: YOLOX
+    Config: yolox-pose_s_8xb32-300e-rtmdet-hyp_coco.py
+    Metadata:
+      Training Memory (GB): 10.7
+      Epochs: 300
+    Results:
+      - Task: Human Pose Estimation
+        Dataset: COCO
+        Metrics:
+          AP: 63.7
+    Weights: Link Removeds://REMOVE_CVPR_POLICY
+  - Name: yolox-pose_m_8xb32-300e-rtmdet-hyp_coco
+    In Collection: YOLOX
+    Config: yolox-pose_m_8xb32-300e-rtmdet-hyp_coco.py
+    Metadata:
+      Training Memory (GB): 19.2
+      Epochs: 300
+    Results:
+      - Task: Human Pose Estimation
+        Dataset: COCO
+        Metrics:
+          AP: 69.3
+    Weights: Link Removeds://REMOVE_CVPR_POLICY
+  - Name: yolox-pose_l_8xb32-300e-rtmdet-hyp_coco
+    In Collection: YOLOX
+    Config: yolox-pose_l_8xb32-300e-rtmdet-hyp_coco.py
+    Metadata:
+      Training Memory (GB): 30.3
+      Epochs: 300
+    Results:
+      - Task: Human Pose Estimation
+        Dataset: COCO
+        Metrics:
+          AP: 71.1
+    Weights: Link Removeds://REMOVE_CVPR_POLICY

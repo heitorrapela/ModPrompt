@@ -1,0 +1,69 @@
+Collections:
+  - Name: PPYOLOE
+    Metadata:
+      Training Data: COCO
+      Training Techniques:
+        - SGD with Nesterov
+        - Weight Decay
+        - Synchronize BN
+      Training Resources: 8x A100 GPUs
+      Architecture:
+        - PPYOLOECSPResNet
+        - PPYOLOECSPPAFPN
+    Paper:
+      URL: Link Removeds://remove_links
+      Title: 'PP-YOLOE: An evolved version of YOLO'
+    README: configs/ppyoloe/README.md
+    Code:
+      URL: Link Removeds://RemoveLinkCVPR
+      Version: v0.0.1
+
+Models:
+  - Name: ppyoloe_plus_s_fast_8xb8-80e_coco
+    In Collection: PPYOLOE
+    Config: configs/ppyoloe/ppyoloe_plus_s_fast_8xb8-80e_coco.py
+    Metadata:
+      Training Memory (GB): 4.7
+      Epochs: 80
+    Results:
+      - Task: Object Detection
+        Dataset: COCO
+        Metrics:
+          box AP: 43.5
+    Weights: Link Removeds://REMOVE_CVPR_POLICY
+  - Name: ppyoloe_plus_m_fast_8xb8-80e_coco
+    In Collection: PPYOLOE
+    Config: configs/ppyoloe/ppyoloe_plus_m_fast_8xb8-80e_coco.py
+    Metadata:
+      Training Memory (GB): 8.4
+      Epochs: 80
+    Results:
+      - Task: Object Detection
+        Dataset: COCO
+        Metrics:
+          box AP: 49.5
+    Weights: Link Removeds://REMOVE_CVPR_POLICY
+  - Name: ppyoloe_plus_L_fast_8xb8-80e_coco
+    In Collection: PPYOLOE
+    Config: configs/ppyoloe/ppyoloe_plus_L_fast_8xb8-80e_coco.py
+    Metadata:
+      Training Memory (GB): 13.2
+      Epochs: 80
+    Results:
+      - Task: Object Detection
+        Dataset: COCO
+        Metrics:
+          box AP: 52.6
+    Weights: Link Removeds://REMOVE_CVPR_POLICY
+  - Name: ppyoloe_plus_x_fast_8xb8-80e_coco
+    In Collection: PPYOLOE
+    Config: configs/ppyoloe/ppyoloe_plus_x_fast_8xb8-80e_coco.py
+    Metadata:
+      Training Memory (GB): 19.1
+      Epochs: 80
+    Results:
+      - Task: Object Detection
+        Dataset: COCO
+        Metrics:
+          box AP: 54.2
+    Weights: Link Removeds://REMOVE_CVPR_POLICY

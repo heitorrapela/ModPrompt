@@ -1,0 +1,83 @@
+Collections:
+  - Name: YOLOv7
+    Metadata:
+      Training Data: COCO
+      Training Techniques:
+        - SGD with Nesterov
+        - Weight Decay
+        - AMP
+        - Synchronize BN
+      Training Resources: 8x A100 GPUs
+      Architecture:
+        - EELAN
+        - PAFPN
+        - RepVGG
+    Paper:
+      URL: Link Removeds://remove_links
+      Title: 'YOLOv7: Trainable bag-of-freebies sets new state-of-the-art for real-time object detectors'
+    README: configs/yolov7/README.md
+    Code:
+      URL: Link Removeds://RemoveLinkCVPR
+      Version: v0.0.1
+
+Models:
+  - Name: yolov7_tiny_syncbn_fast_8x16b-300e_coco
+    In Collection: YOLOv7
+    Config: configs/yolov7/yolov7_tiny_syncbn_fast_8x16b-300e_coco.py
+    Metadata:
+      Training Memory (GB): 2.7
+      Epochs: 300
+    Results:
+      - Task: Object Detection
+        Dataset: COCO
+        Metrics:
+          box AP: 37.5
+    Weights: Link Removeds://REMOVE_CVPR_POLICY
+  - Name: yolov7_l_syncbn_fast_8x16b-300e_coco
+    In Collection: YOLOv7
+    Config: configs/yolov7/yolov7_l_syncbn_fast_8x16b-300e_coco.py
+    Metadata:
+      Training Memory (GB): 10.3
+      Epochs: 300
+    Results:
+      - Task: Object Detection
+        Dataset: COCO
+        Metrics:
+          box AP: 50.9
+    Weights: Link Removeds://REMOVE_CVPR_POLICY
+  - Name: yolov7_x_syncbn_fast_8x16b-300e_coco
+    In Collection: YOLOv7
+    Config: configs/yolov7/yolov7_x_syncbn_fast_8x16b-300e_coco.py
+    Metadata:
+      Training Memory (GB): 13.7
+      Epochs: 300
+    Results:
+      - Task: Object Detection
+        Dataset: COCO
+        Metrics:
+          box AP: 52.8
+    Weights: Link Removeds://REMOVE_CVPR_POLICY
+  - Name: yolov7_w-p6_syncbn_fast_8x16b-300e_coco
+    In Collection: YOLOv7
+    Config: configs/yolov7/yolov7_w-p6_syncbn_fast_8x16b-300e_coco.py
+    Metadata:
+      Training Memory (GB): 27.0
+      Epochs: 300
+    Results:
+      - Task: Object Detection
+        Dataset: COCO
+        Metrics:
+          box AP: 54.1
+    Weights: Link Removeds://REMOVE_CVPR_POLICY
+  - Name: yolov7_e-p6_syncbn_fast_8x16b-300e_coco
+    In Collection: YOLOv7
+    Config: configs/yolov7/yolov7_e-p6_syncbn_fast_8x16b-300e_coco.py
+    Metadata:
+      Training Memory (GB): 42.5
+      Epochs: 300
+    Results:
+      - Task: Object Detection
+        Dataset: COCO
+        Metrics:
+          box AP: 55.1
+    Weights: Link Removeds://REMOVE_CVPR_POLICY
